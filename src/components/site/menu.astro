@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+  site: CollectionEntry<'site'>
+}
+
+const { site } = Astro.props
+---
+
+<Fragment>
+  {
+    site.data.menu && (
+      <nav>
+        <ul class='flex bg-theme-text text-theme-main/80'>
+          {site.data.menu.map((menu) => (
+            <li class='px-3 md:px-4 py-1 md:py-2 hover:bg-theme-main/20 hover:text-theme-main hover:cursor-pointer transition-colors'>
+              <a href={menu.url}>{menu.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    )
+  }
+</Fragment>

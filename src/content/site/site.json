@@ -1,0 +1,19 @@
+{
+  "$schema": "../../../.astro/collections/site.schema.json",
+  "title": "Twenty Ten",
+  "description": "Just another Astro site.",
+  "menu": [
+    {
+      "label": "Home",
+      "url": "/"
+    },
+    {
+      "label": "About",
+      "url": "/#about"
+    },
+    {
+      "label": "Contact",
+      "url": "/#contact"
+    }
+  ]
+}
