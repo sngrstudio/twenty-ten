@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from 'astro:content'
+import Menu from './menu.astro'
+
+interface Props {
+  site: CollectionEntry<'site'>
+}
+
+const { site } = Astro.props
+---
+
+<header class='bg-theme-main max-w-screen-lg mx-auto pt-6 px-2 md:px-6'>
+  {/* Title Section */}
+  <div class='flex flex-col md:flex-row md:items-baseline gap-y-1'>
+    <div class='flex-1'>
+      <a class='font-bold text-2xl md:text-3xl' href='/'>{site.data.title}</a>
+    </div>
+    <div>
+      <div class='text-sm font-serif italic text-theme-neutral'>
+        {site.data.description}
+      </div>
+    </div>
+  </div>
+
+  {/* Banner Section */}
+  <div class='mt-6'></div>
+
+  {/* Menu Section */}
+  <Menu site={site} />
+</header>
